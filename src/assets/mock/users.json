@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "User 1",
+    "description": "Incidunt et magni est ut.",
+    "address": "2485, El camino Real, Red wood city",
+    "imageUrl": "assets/img/user.png",  "wait": "Model 1"
+  },
+  {
+    "id": 2,
+    "name": "User 2",
+    "description": "Incidunt et magni est ut.",
+    "address": "2485, El camino Real, Red wood city",
+    "imageUrl": "assets/img/user.png",
+    "wait": "Model 1"
+  },
+  {
+    "id": 3,
+    "name": "User 3",
+    "description": "Incidunt et magni est ut.",
+    "address": "2485, El camino Real, Red wood city",
+    "imageUrl": "assets/img/user.png",    "wait": "Model 1"
+  }
+]

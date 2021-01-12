@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-toolbar class="toolbar">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            <img src="assets/img/logo.png" class="logo">
+            <span class="subtitle"> COD- Hackathon</span>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+
+    <div class="ct">
+
+        <div class="ml-20">
+
+            <ion-item class="page-subtitle" lines="none">Login - Choose User Profile</ion-item>
+
+
+
+            <ion-button expand="block" color="primary" (click) ="login(1)">
+                <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+                User 1
+            </ion-button>
+
+            <ion-button expand="block" color="tertiary" (click) ="login(2)">
+                <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+                User 2
+            </ion-button>
+
+            <ion-button expand="block"  color="secondary" (click) ="login(3)">
+                <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+                User 3
+            </ion-button>
+
+
+
+            <ion-item class="page-subtitle" lines="none"><span>Machine learning model serving changes based on user profile</span></ion-item>
+        </div>
+
+
+    </div>
+
+    <div *ngIf="areStoresAvailable">
+
+
+        <ion-card *ngFor="let items of stores">
+            <ion-item>
+                <ion-thumbnail slot="start">
+                    <ion-img width="20px" height="20px" [src]="items.imageUrl"></ion-img>
+                </ion-thumbnail>
+                <ion-label color="secondary">
+                    <ion-icon color="secondary" class="m-4" name="time" slot="start"></ion-icon>
+                    <span class="page-subtitle">{{items.wait}} wait </span>
+                </ion-label>
+                <ion-button color="secondary" (click)="navigateToOtherPage()">Join Queue</ion-button>
+
+
+            </ion-item>
+
+            <ion-card-content>
+                <ion-item>
+                    <ion-icon class="m-4" name="flag" slot="start"></ion-icon>
+                    <ion-label class="page-subtitle m-4">{{items.name}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-icon class="m-4" name="pin" slot="start"></ion-icon>
+                    <ion-label class="m-4"><span class="page-subtitle">{{items.address}}</span></ion-label>
+                </ion-item>
+
+            </ion-card-content>
+        </ion-card>
+
+
+    </div>
+
+</ion-content>

@@ -1,0 +1,128 @@
+<ion-header>
+    <ion-toolbar class="toolbar">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            <img src="assets/img/logo.png" class="logo">
+            <span class="subtitle"> COD- Hackathon</span>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen class="content ion-text-center">
+
+
+    <ion-item>
+        <ion-buttons (click)="backClicked()">
+            <ion-icon name="arrow-back"></ion-icon>
+
+        </ion-buttons>
+    </ion-item>
+
+
+
+    <ion-grid *ngIf="store">
+
+        <ion-row>
+            <ion-col>
+                <ion-thumbnail>
+                    <ion-img [src]="store.imageUrl"></ion-img>
+                </ion-thumbnail>
+            </ion-col>
+            <ion-col size="8">
+                <ion-item lines="none">
+                    <ion-card-subtitle>{{store.name}}</ion-card-subtitle>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+
+
+    </ion-grid>
+
+    <!-- <ion-icon name="bar-chart-outline"></ion-icon> -->
+
+
+    <ion-grid *ngIf="store">
+
+        <ion-item class="page-subtitle" lines="none">Make a transaction</ion-item>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="block" color="primary" (click)="predict(10)">
+                    <ion-icon slot="icon-only" name="card-outline"></ion-icon>
+                    $10
+                </ion-button>
+
+            </ion-col>
+
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="block" color="primary" (click)="predict(100)">
+                    <ion-icon slot="icon-only" name="card-outline"></ion-icon>
+                    $100
+                </ion-button>
+
+            </ion-col>
+
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button expand="block" color="primary" (click)="predict(500)">
+                    <ion-icon slot="icon-only" name="card-outline"></ion-icon>
+                    $500
+                </ion-button>
+
+            </ion-col>
+
+        </ion-row>
+
+
+    </ion-grid>
+
+
+
+    <ion-card *ngIf="clicked">
+
+
+        <ion-row class="ml-20">
+
+            <ion-item lines="none" *ngIf="loading">
+                <ion-spinner name="crescent" class="m-4"></ion-spinner>
+
+                Predicting next 3 days balance
+            </ion-item>
+            <ion-item lines="none">
+                <ion-card-subtitle class="subtitle">Prediction is based on your spend pattern </ion-card-subtitle>
+            </ion-item>
+
+
+        </ion-row>
+
+
+
+        <ion-card-content *ngIf="clicked">
+
+            <div>
+                <div style="display: block">
+                    <canvas baseChart [colors]="barChartColors" [datasets]="barChartData" [labels]="barChartLabels"
+                        [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                    </canvas>
+                </div>
+            </div>
+
+            <ion-list>
+                <ion-list-header class="subtitle">Predictions</ion-list-header>
+                <ion-item *ngFor="let item of barChartData[0].data; let i = index">
+                    <ion-label>Day {{i+1}}</ion-label>
+                    <ion-badge slot="end">{{item | number:'1.0-0'}}</ion-badge>
+                </ion-item>
+   
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
