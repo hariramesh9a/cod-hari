@@ -36,7 +36,7 @@ export class AppComponent {
                 },
                 {
                     title: 'Design',
-                    url: '/register/login-code',
+                    url: '/design',
                     icon: 'code-working-outline'
                 }
             ];

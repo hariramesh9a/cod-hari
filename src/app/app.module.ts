@@ -8,10 +8,11 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import {ThemeService} from 'ng2-charts';
+import { ThemeService } from 'ng2-charts';
+import { DesignComponent } from './design/design.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent,DesignComponent],
     entryComponents: [],
     imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule
     ],
