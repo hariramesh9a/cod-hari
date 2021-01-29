@@ -15,7 +15,7 @@ export class StoresService {
     private queueUrl = 'assets/mock/queue.json';
     private predictUrl = 'assets/mock/prediction.json';
 
-    private predictApiUrl = 'http://ec2-35-164-84-64.us-west-2.compute.amazonaws.com:5000/?user=';
+    private predictApiUrl = 'http://ec2-54-214-147-12.us-west-2.compute.amazonaws.com:5000/?user=';
     // private predictApiUrl = 'http://localhost:5000/?user=';
 
     // user=1&amount=100
